@@ -13,9 +13,10 @@ function search_all() {
   var unsplash_search = SpreadsheetApp.setActiveSheet(ss.getSheetByName("unsplash_search"));
   
   // Things tht go into the request
-  var BASE_URL = "https://www.googleapis.com/customsearch/v1?",          // API URL
-      URL = `${BASE_URL}key=${google_key}&cx=${cseID}&searchType=image&q=${querry}`,      // Actuall URL we will call
-      querry = "https://images.unsplash.com/photo-1576534125507-93240225acd9?ixlib";             // What we will search for
+  var BASE_URL = "https://www.googleapis.com/customsearch/v1?&searchType=image",       // API URL
+      querry = "https://images.unsplash.com/photo-1576534125507-93240225acd9?ixlib",   // This is the most direct URL to your photo                                                         // What we will search for
+      URL = `${BASE_URL}&key=${google_key}&cx=${cseID}&q=${querry}`;                   // Actuall URL we will call
+
   
   var headers = {
   };
@@ -27,7 +28,7 @@ function search_all() {
   
   // Run the search
   var response = UrlFetchApp.fetch(URL, options);
-  Logger.log(response)
+  //Logger.log(response)
   
   // Clean up and assable
   var responseData = JSON.parse(response.getContentText());
