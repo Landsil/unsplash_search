@@ -15,7 +15,7 @@ function search_all() {
   // Things tht go into the request
   var BASE_URL = "https://www.googleapis.com/customsearch/v1?",          // API URL
       URL = `${BASE_URL}key=${google_key}&cx=${cseID}&searchType=image&q=${querry}`,      // Actuall URL we will call
-      querry = "https://images.unsplash.com/photo-1576534125507-93240225acd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1867&q=80";             // What we will search for
+      querry = "https://images.unsplash.com/photo-1576534125507-93240225acd9?ixlib";             // What we will search for
   
   var headers = {
   };
