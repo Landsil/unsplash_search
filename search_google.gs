@@ -36,7 +36,7 @@ function search_all() {
   
   // Clear content except header all the way to "Z" column. TODO: make it find cells with content and cleare those.
   unsplash_search.getRange('A2:Z').clearContent();
-  // This decided where to post. Starts after header.
+  // This decides where to post. Starts after header.
   var lastRow = Math.max(unsplash_search.getRange(2, 1).getLastRow(),1);
   var index = 0;
     
@@ -44,9 +44,10 @@ function search_all() {
   for(var i = 0; i < data.length; i++ )
   {
     unsplash_search.getRange(index + lastRow + i, 1).setValue(data[i]["title"]);
-    unsplash_search.getRange(index + lastRow + i, 2).setValue(data[i]["link"]);
-    var contextLink = (data[i] && data[i].image && data[i].image.contextLink)||""; unsplash_search.getRange(index + lastRow + i, 3).setValue(contextLink);
-    var thumbnailLink = (data[i] && data[i].image && data[i].image.thumbnailLink)||""; unsplash_search.getRange(index + lastRow + i, 4).setValue(thumbnailLink);
+    var contextLink = (data[i] && data[i].image && data[i].image.contextLink)||""; unsplash_search.getRange(index + lastRow + i, 2).setValue(contextLink);
+    var link = (data[i]["link"])||""; unsplash_search.getRange(index + lastRow + i, 3).setValue(link);
+    var image = '=image("' +link+ '")' ; unsplash_search.getRange(index + lastRow + i, 4).setValue(image);
+    
   }
   
 // This actually posts data when it's ready instead of making many changes one at a time.
