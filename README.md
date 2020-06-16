@@ -18,7 +18,6 @@ First run "Create Sheet", that will make a formated sheet with some names in it.
 THIS IS END OF BASIC MANUAL   TODO : make video of it.
 
 
-at the moment only way to use it is to change hardcoded URL to a photo.
-search_google.gs >> variable "querry"
-After that save updated code and run "Run Search" from spreadsheet.
+at the moment only way to use it is to put one direct URL at a time into F1 cell
 It should find and post you 10 results.
+Please note, some people will use direct links to Unsplash on their website.
