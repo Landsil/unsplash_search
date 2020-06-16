@@ -1,6 +1,7 @@
 # unsplash_search
 
 ## Alpha version
+### Do not use yet
 
 ### Basic manual
 1. Create a google spreadsheet
